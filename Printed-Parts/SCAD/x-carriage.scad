@@ -207,7 +207,7 @@ module final_cutout()
         union() 
         {
         translate([-14.199,9.05,0]) rotate([-5,0,22.5]) cylinder(r=1.62, h=40, $fn=8);    
-        translate([-14.5,9.7,8]) rotate([-5,0,22.5]) cylinder(r=1.62,r2=3, h=8, $fn=8);  
+        translate([-14.5,9.7,8]) rotate([-5,0,22.5]) cylinder(r1=1.62,r2=3, h=8, $fn=8);  
         }
     }
     
@@ -399,28 +399,30 @@ module x_carriage()
 module left_belt_cut()
 {
 
-        translate([-22.5,30.2,7]) cylinder(r=1.5, h=100, $fn=30);
-        translate([-23.0,20,7]) cube([2,10,30]);
-        translate([-56.5,28.5,7]) belt_cut();
-        translate([13.5,20.5,0]) rotate([0,0,25])
+        translate([-22.5,29.7,7]) cylinder(r=1.5, h=100, $fn=30);
+        translate([-23.0,19.8,7]) cube([2,10,30]);
+        translate([-55.8,25.5,7]) belt_cut();
+        translate([13.2,1.95,0]) rotate([0,0,0])
         {
             difference()
             {
             translate([-56.5,28.5,7]) belt_cut();
-            translate([-80,25,7]) cube([37.5,10,30]);
+            translate([-77.95,25,7]) cube([37.5,10,30]);
             }
         }
-        translate([13.2,2.38,0]) rotate([0,0,0])
+        translate([29.88,30.5,0]) rotate([0,0,30])
         {
             difference()
             {
-            translate([-56.5,28.5,7]) belt_cut();
-            translate([-82.42,25,7]) cube([37.5,10,30]);
+               translate([-56.1,28.5,7]) belt_cut();
+               translate([-90.07,25,7]) cube([30,10,30]);
+               translate([-49.45,25,7]) cube([20.5,10,30]);
             }
         }
         translate([-45,18,4]) rotate([0,0,-13.5]) cube([10.5,3,32]);
-        translate([-31.5,30.4,10]) rotate([-10,0,15]) cylinder(r=0.2, h=100, $fn=30);
-        translate([-31.6,30.75,7]) rotate([0,0,0]) cylinder(r=0.2, h=100, $fn=30);
+x=4.26;
+        translate([-31.5+x,30.4,10]) rotate([-10,0,15]) cylinder(r=0.2, h=100, $fn=30);
+        translate([-31.6+x,30.75,7]) rotate([0,0,0]) cylinder(r=0.2, h=100, $fn=30);
     }
 
 
@@ -440,18 +442,19 @@ module right_belt_cut()
         }
         translate([43.2,-30.25,0]) rotate([0,0,-30])
         {
-        difference()
+            difference()
             {
                 translate([-56.5,28.5,7]) belt_cut();
                 translate([-82.1,25,7]) cube([10,10,30]);
-                translate([-61.5,25,7]) cube([20.5,10,30]);
+                translate([-61.5,25,7]) cube([40.5,10,30]);
             }
         }
         translate([2,14.6,7]) rotate([0,0,15]) cube([10,3,30]);
         translate([-5.1,30,10]) rotate([-10,0,-15]) cylinder(r=0.2, h=100, $fn=30);
         translate([-5,30.3,7]) rotate([0,0,0]) cylinder(r=0.2, h=100, $fn=30);
     }
-
+//right_belt_cut();
+//left_belt_cut();
 x_carriage();
   
     
