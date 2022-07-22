@@ -16,3 +16,4 @@ This repository contains SCAD files and STLs of the printed parts.
  * MK3 Power panic : https://github.com/prusa3d/MK3_Power_Panic
  * MK3S IR senzor : https://github.com/prusa3d/MKxS-IR-sensor
  
+Modified by Toto-W
